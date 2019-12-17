@@ -20,26 +20,6 @@ def index():
     form = CrimeForm()
 
     if form.validate_on_submit():
-
-        locationDesc = escape(form.locationDescription.data)
-        arrest = escape(form.arrest.data)
-        domestic = escape(form.domestic.data)
-        beat = escape(form.beat.data)
-        districtCode = escape(form.district_code.data)
-        wardCode = escape(form.ward_code.data)
-        community_area = escape(form.community_area.data)
-        fbi_code = escape(form.fbi_code.data)
-        dateofcrime = escape(form.dateofcrime.data)
-
-        # print(dateofcrime)
-        # print(arrest)
-        # print(domestic)
-
-        spark = SparkSession.builder.appName('pbda').getOrCreate()
-        sc = spark.sparkContext
-
-        print(sc)
-
         return render_template('home.html',form=form,submitted=True)
 
     return render_template('home.html',form=form,submitted=False)
