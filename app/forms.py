@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField,BooleanField,DateField
+from wtforms import StringField, SubmitField,BooleanField,DateField, SelectField
 from wtforms.validators import DataRequired
 from wtforms.widgets import TextArea
 from datetime import  date
@@ -15,4 +15,10 @@ class CrimeForm(FlaskForm):
     fbi_code = StringField('FBI Code',id='fbi_code',validators=[DataRequired()])
     dateofcrime = DateField('Date of Crime',default=date.today(), format='%Y-%m-%d')
 
+    submit = SubmitField('Submit')
+
+class Visualization(FlaskForm):
+    questionDropdown =  SelectField(
+        'Question',
+        choices=[('cpy', 'Crimes Per Year'), ('cpm', 'Crimes Per Month'), ('t5y', 'Top 5 type of Crimes per year') ], validators = [DataRequired()])
     submit = SubmitField('Submit')

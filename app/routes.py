@@ -1,10 +1,10 @@
 from flask import redirect,escape,url_for
 from flask_bootstrap import Bootstrap
-from flask import render_template
+from flask import render_template, request
 
 from datetime import date
 from app import app
-from app.forms import CrimeForm
+from app.forms import CrimeForm, Visualization
 
 
 bootstrap = Bootstrap(app)
@@ -23,3 +23,15 @@ def index():
 @app.route('/home',methods=['GET','POST'])
 def home():
     return "Home is here"
+
+@app.route('/vis',methods=['GET','POST'])
+def vis():
+    form = Visualization()
+    if request.method =='GET':
+        return render_template('vis.html',form=form, submitted=False)
+    if request.method =='POST':
+        if form.submit:
+            ques = form.questionDropdown.data
+            print(ques)
+            if ques == 'cpy':
+                return render_template('vis.html',form=form, imagetype = 'cpy', image="crimeperyear.png")
