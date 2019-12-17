@@ -1,8 +1,9 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField,BooleanField,DateField
+from wtforms import StringField, SubmitField,BooleanField
 from wtforms.validators import DataRequired
 from wtforms.widgets import TextArea
-from datetime import  date
+import datetime
+from wtforms.fields.html5 import DateTimeField
 
 class CrimeForm(FlaskForm):
     locationDescription = StringField('Location_description',id='loc_desc',widget=TextArea(),validators=[DataRequired()])
@@ -13,6 +14,6 @@ class CrimeForm(FlaskForm):
     ward_code = StringField('Ward Code',id='ward',validators=[DataRequired()])
     community_area = StringField('Community Area',id='community_area',validators=[DataRequired()])
     fbi_code = StringField('FBI Code',id='fbi_code',validators=[DataRequired()])
-    dateofcrime = DateField('Date of Crime',default=date.today(), format='%Y-%m-%d')
+    dateofcrime = DateTimeField('Date and time of Crime',default=datetime.datetime.now(),format="%Y-%m-%d %H:%M:%S")
 
     submit = SubmitField('Submit')
