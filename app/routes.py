@@ -35,3 +35,17 @@ def vis():
             print(ques)
             if ques == 'cpy':
                 return render_template('vis.html',form=form, imagetype = 'cpy', image="crimeperyear.png")
+            elif ques == 'cpm':
+                return render_template('vis.html',form=form, imagetype = 'cpm', image="crimespermonth.png")
+            elif ques == 't5y':
+                return render_template('vis.html',form=form, imagetype = 't5y', image="top5.png")
+            elif ques == 'gam':
+                return render_template('vis.html',form=form, imagetype = 'gam', image="bokeh.html")
+            elif ques == 'war':
+                return render_template('vis.html',form=form, imagetype = 'war', image="wardWise.html")
+            elif ques == 'dis':
+                return render_template('vis.html',form=form, imagetype = 'dis', image="districtWise.html")
+            elif ques == 'ptm':
+                return render_template('vis.html',form=form, imagetype = 'ptm', image="PrimaryType.png")
+            else:
+                return render_template('vis.html',form=form, submitted=False)
