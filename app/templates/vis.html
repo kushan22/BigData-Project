@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtfs %}
+
+<html>
+
+<head>
+    <title>Chicago Crime Data Visualisation</title>
+</head>
+
+<style>
+img{
+    visibility: hidden;
+}
+
+</style>
+
+<body>
+    {% block content %}
+
+    <div class="container">
+
+        <div class="jumbotron">
+            <div class="flex-d justify-content-center">Select the Visualisation Questions you are interested in </div>
+        </div>
+
+        <form action="" method="POST">
+            <div class="form-group">
+                {{ wtfs.form_field(form.questionDropdown,class="form-control") }}
+
+            </div>
+            {{ wtfs.form_field(form.submit,class="btn btn-success")}}
+        </form>
+
+        <div class="container">
+            {% if imagetype == 'cpy' %}
+            <div >
+                <img src="/static/crimeperyear.png" style="height:600px; width:800px" />
+            </div> 
+            {% elif imagetype == 'cpm' %}
+            <div >
+                <img src="/static/crimespermonth.png" style="height:600px; width:800px" />
+            </div> 
+            {% elif imagetype == 't5y' %}
+            <div >
+                <img src="/static/top5.png" style="height:600px; width:800px" />
+            </div> 
+            {% elif imagetype == 'gam' %}
+            <div style="height:600px; width:800px"  >
+            {% include 'bokeh.html' %}
+            </div > 
+            {% elif imagetype == 'war' %}
+            <div style="height:600px; width:800px"  >
+            {% include 'wardWise.html' %}
+            </div > 
+            {% elif imagetype == 'dis' %}
+            <div style="height:600px; width:800px"  >
+            {% include 'districtWise.html' %}
+            </div > 
+            {% elif imagetype == 'ptm' %}
+            <div >
+                <img src="/static/PrimaryType.png" style="height:800px; width:1000px" />
+            </div> 
+            {% endif %}
+        </div>
+        <br>
+        <br>
+        {% endblock %}
+</body>
+
+</html>
