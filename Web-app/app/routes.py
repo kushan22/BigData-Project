@@ -67,6 +67,7 @@ labelConverter = IndexToString(inputCol="prediction", outputCol="predictionLabel
 def index():
     return redirect('/home')
 
+
 @app.route('/home',methods=['GET','POST'])
 def home():
 
@@ -97,6 +98,11 @@ def home():
 
 
     return render_template('home.html',labels=labels,predictionLabels=predictionLabels)
+
+@app.route('/nav',methods=['GET','POST'])
+def nav():
+    return render_template('homepage.html')
+
 
 @app.route('/vis',methods=['GET','POST'])
 def vis():
