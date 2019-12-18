@@ -65,7 +65,7 @@ labelConverter = IndexToString(inputCol="prediction", outputCol="predictionLabel
 
 @app.route('/',methods=['GET','POST'])
 def index():
-    return redirect('/home')
+    return redirect('/nav')
 
 
 @app.route('/home',methods=['GET','POST'])
