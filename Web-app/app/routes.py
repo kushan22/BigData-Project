@@ -24,9 +24,9 @@ def index():
 
     return render_template('home.html',form=form,submitted=False)
 
-@app.route('/home',methods=['GET','POST'])
-def home():
-    return "Home is here"
+@app.route('/nav',methods=['GET','POST'])
+def nav():
+    return render_template('homepage.html')
 
 @app.route('/vis',methods=['GET','POST'])
 def vis():
