@@ -8,63 +8,37 @@
             <div class="flex-d justify-content-center">Enter the Crime Details and we will predict what type of crime it was for more detailed forensics</div>
         </div>
 
+        <div>
+
+            <table class="table table-bordered">
+
+                <thead>
+                    <tr>
+                        <th>Original Label</th>
+                        <th>Predicted Label</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {% for i in range(5) %}
+                        <tr>
+                        <td>{{ labels[i] }}</td>
+                         <td>{{ predictionLabels[i] }}</td>
+                        </tr>
+                    {% endfor %}
+
+
+                </tbody>
+
+            </table>
+
+
+
+        </div>
+
         <br>
         <br>
 
-        <form action="" method="POST">
-            {{ form.hidden_tag() }}
-            <div class="form-group">
-                {{ wtf.form_field(form.locationDescription,class="form-control", placeholder="Enter Description of Location") }}
-
-            </div>
-
-            <div class="form-group">
-                {{ wtf.form_field(form.arrest,class="form-control") }}
-
-            </div>
-
-              <div class="form-group">
-                {{ wtf.form_field(form.domestic,class="form-control") }}
-
-            </div>
-
-            <div class="form-group">
-                {{ wtf.form_field(form.beat,class="form-control", placeholder="Enter Beat Code") }}
-
-            </div>
-
-            <div class="form-group">
-                {{ wtf.form_field(form.district_code,class="form-control", placeholder="Enter District Code") }}
-
-            </div>
-
-             <div class="form-group">
-                {{ wtf.form_field(form.ward_code,class="form-control", placeholder="Enter Ward Code") }}
-
-            </div>
-
-
-             <div class="form-group">
-                {{ wtf.form_field(form.community_area,class="form-control", placeholder="Enter Community Area Code") }}
-
-            </div>
-
-
-             <div class="form-group">
-                {{ wtf.form_field(form.fbi_code,class="form-control", placeholder="Enter FBI Code") }}
-
-            </div>
-
-
-             <div class="form-group">
-                {{ wtf.form_field(form.dateofcrime,class="form-control") }}
-
-            </div>
-
-             {{ wtf.form_field(form.submit,class="btn btn-success")}}
-
-
-        </form>
 
     </div>
 
