@@ -6,6 +6,10 @@ from datetime import date
 from app import app
 from app.forms import CrimeForm, Visualization
 
+from pyspark.sql import SparkSession
+
+
+
 
 bootstrap = Bootstrap(app)
 
