@@ -51,10 +51,11 @@ def vis():
                 return render_template('vis.html',form=form, imagetype = 'dis', image="districtWise.html")
             elif ques == 'ptm':
                 return render_template('vis.html',form=form, imagetype = 'ptm', image="PrimaryType.png")
+            elif ques == 'ptc':
+                return render_template('vis.html',form=form, imagetype = 'ptc', image="PrimaryCt.png")
             else:
                 return render_template('vis.html',form=form, submitted=False)
 
 @app.route('/tableau',methods=['GET','POST'])
 def tab():
-
     return render_template('story.html')
