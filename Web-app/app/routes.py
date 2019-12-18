@@ -57,4 +57,4 @@ def vis():
 @app.route('/tableau',methods=['GET','POST'])
 def tab():
 
-    return render_template('tab.html')
+    return render_template('story.html')
