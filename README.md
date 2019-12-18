@@ -13,6 +13,10 @@ ensuring the safety of the people of Chicago.
 We have used Logistic Regression and Random Forest models to predict the primary type of crime from the data spanning 
 over 20 years.
 
+## Web Application
+We have created a web application using Python Flask, Bootstrap, HTML, CSS in order to aggregate our findings into a concise and simple application which is user-friendly and easy-to-use.
+
+
 ### Team Members
 Gururaj Shinde
  
