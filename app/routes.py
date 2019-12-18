@@ -49,3 +49,8 @@ def vis():
                 return render_template('vis.html',form=form, imagetype = 'ptm', image="PrimaryType.png")
             else:
                 return render_template('vis.html',form=form, submitted=False)
+
+@app.route('/tableau',methods=['GET','POST'])
+def tab():
+
+    return render_template('tab.html')
