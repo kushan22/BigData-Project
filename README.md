@@ -2,7 +2,7 @@
 
 ## Analysis
 
-We have used various visualization tools like Bokeh, Tableau, Folium, Google Maps to analyse various crime trends that could 
+A Spark pipeline has been created for data cleaning and processing huge sets of data. We have used various visualization tools like Bokeh, Tableau, Folium, Google Maps to analyse various crime trends that could 
 help in the reduction and prevention of crimes in the city of Chicago.
 
 This can be of great use to various Police departments in using our analytical results to take measures for stringent action in
